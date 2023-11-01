@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Badge, Box, IconButton } from "@mui/material";
+import { Badge, Box, IconButton, Typography } from "@mui/material";
 import {
   PersonOutline,
   ShoppingBagOutlined,
@@ -40,7 +40,7 @@ const Navbar = () => {
           sx={{ "&:hover": { cursor: "Pointer" } }}
           color={shades.secondary[500]}
         >
-          SHOPPING FEED
+          <Typography variant="h3" fontSize="16px" fontWeight="700">SHOPPING FEED</Typography>
         </Box>
 
         <Box
@@ -57,18 +57,19 @@ const Navbar = () => {
             <PersonOutline />
           </IconButton>
 
-          <Badge 
-          badgeContent={cart.length}
-          color="secondary"
-          invisible={cart.length === 0 }
-          sx={{"&.muiBadge-badge":{
-            right:5,
-            top:5,
-            padding:"0, 4px",
-            height:"14px",
-            minWidth:"13px"
-          }
-           }}
+          <Badge
+            badgeContent={cart.length}
+            color="secondary"
+            invisible={cart.length === 0}
+            sx={{
+              "&.muiBadge-badge": {
+                right: 5,
+                top: 5,
+                padding: "0, 4px",
+                height: "14px",
+                minWidth: "13px",
+              },
+            }}
           >
             <IconButton
               onClick={() => dispatch(setIsCartOpen({}))}
