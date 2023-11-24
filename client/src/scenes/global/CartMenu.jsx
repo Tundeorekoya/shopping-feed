@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Typography, Button, IconButton, Divider } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
-import CloseIcon from "@mui/icons-material";
-import AddIcon from "@mui/icons-material";
-import RemoveIcon from "@mui/icons-material";
+import CloseIcon from "@mui/icons-material/Close";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
 import styled from "@emotion/styled";
 import { shades } from "../../Theme";
 import {
@@ -21,7 +21,7 @@ const FlexBox = styled(Box)`
 `;
 
 const CartMenu = () => {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
@@ -108,17 +108,36 @@ const CartMenu = () => {
                       </Box>
                     </FlexBox>
                   </Box>
+                  <Typography fontWeight="bold">
+                    {" "}
+                    N{item.attributes.price}
+                  </Typography>
                 </FlexBox>
-
-                <Typography fontWeight="bold"> N{item.attributes.price}</Typography>
               </Box>;
             })}
           </Box>
 
-
-
-
-          
+          <Box m="20px 0">
+            <FlexBox>
+              <Typography fontWeight="bold">SUBTOTAL</Typography>
+              <Typography fontWeight="bold">N{totalPrice}</Typography>
+            </FlexBox>
+            <Button sx={{ 
+              "&:hover ": {cursor:"pointer", color: 'black'},
+              backgroundColor: shades.primary[400],
+              color:  'white' ,
+              
+              borderRadius: "5",
+              minWidth:'100%',
+              padding: "20px 40px",
+              m: "20px 0"
+            }}
+            onClick={() =>{
+              navigate("/checkout")
+              dispatch(setIsCartOpen({}))
+            }}
+            >Check out</Button>
+          </Box>
         </Box>
       </Box>
     </Box>
