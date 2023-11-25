@@ -23,7 +23,7 @@ const MainCarousel = () => {
     <Carousel
       infiniteLoop={true}
       showThumbs={false}
-      showIndicators={false}
+      showIndicators={true}
       showStatus={false}
       renderArrowPrev={(onClickHandler, hasPrev, label) => (
         <IconButton
@@ -71,7 +71,7 @@ const MainCarousel = () => {
           <Box
             color="white"
             padding="20px"
-            borderRadius="1px"
+            borderRadius="5px"
             textAlign="left"
             backgroundColor="rgb(0, 0, 0, 0.4)"
             position="absolute"

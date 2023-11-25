@@ -1,7 +1,7 @@
 import { IconButton } from "@mui/material";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
+import { Box, Typography, useTheme, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { shades } from "../Theme";
@@ -58,7 +58,7 @@ const Items = ({ item, width }) => {
               backgroundColor={shades.neutral[100]}
               borderRadius="3px"
             >
-              <IconButton onClick={() => setCount(math.max(count - 1, 1))} />
+              <IconButton onClick={() => setCount(Math.max(count - 1, 1))} />
               <RemoveIcon />
               <Typography color={shades.primary[300]}>{count}</Typography>
 
