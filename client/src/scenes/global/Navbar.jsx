@@ -56,7 +56,6 @@ const Navbar = () => {
           <IconButton sx={{ color: "black" }}>
             <PersonOutline />
           </IconButton>
-
           <Badge
             badgeContent={cart.length}
             color="secondary"
