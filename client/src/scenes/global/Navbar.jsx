@@ -22,7 +22,7 @@ const Navbar = () => {
       width="100%"
       justifyContent="center"
       height="60px"
-      background="rgba(255,255,255,0.95)"
+      backgroundColor="rgba(255,255,255,0.9)"
       position="fixed"
       top="0"
       left="1"

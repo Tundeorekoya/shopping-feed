@@ -28,7 +28,8 @@ const Item = ({ item, width }) => {
   } = image;
 
   return (
-    <Box width={width}>
+    <Box width={width}
+    >
       <Box
         position="relative"
         onMouseOver={() => setIsHovered(true)}
