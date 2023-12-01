@@ -13,6 +13,7 @@ import {
 } from "../../state";
 import { useNavigate } from "react-router-dom";
 
+
 const FlexBox = styled(Box)`
   display: flex;
   justify-content: space-between;
@@ -26,7 +27,7 @@ const CartMenu = () => {
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
 
   const totalPrice = cart.reduce((total, item) => {
-    return total + item.count * item.attributes.price;
+    return  total + item.count * item.attributes.price;
   }, 0);
 
   return (
