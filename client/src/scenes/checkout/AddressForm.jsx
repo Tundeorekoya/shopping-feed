@@ -5,10 +5,11 @@ const AddressForm = ({
   values,
   errors,
   touched,
-  handleBur,
+  handleBlur,
   handleChange,
 }) => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
+
   const formattedName = (field) => `${type}.${field}`;
   const formattedError = (field) =>
     Boolean(
@@ -22,13 +23,15 @@ const AddressForm = ({
       display="grid "
       gap="15px"
       gridTemplateColumns="repeat (4, minmax(0, 1fr))"
-      sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" } }}
+      sx={{
+        "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
+      }}
     >
       <TextField
         fullWidth
         type="text"
         label="First Name"
-        onBlur={handleBur}
+        onBlur={handleBlur}
         onChange={handleChange}
         value={values.firstName}
         name={formattedName("firstName")}
@@ -43,7 +46,7 @@ const AddressForm = ({
         fullWidth
         type="text"
         label="Last Name"
-        onBlur={handleBur}
+        onBlur={handleBlur}
         onChange={handleChange}
         value={values.lastName}
         name={formattedName("lastName")}
@@ -58,7 +61,7 @@ const AddressForm = ({
         fullWidth
         type="text"
         label="Country"
-        onBlur={handleBur}
+        onBlur={handleBlur}
         onChange={handleChange}
         value={values.country}
         name={formattedName("country")}
@@ -73,7 +76,7 @@ const AddressForm = ({
         fullWidth
         type="text"
         label="Street Address"
-        onBlur={handleBur}
+        onBlur={handleBlur}
         onChange={handleChange}
         value={values.street1}
         name={formattedName("street1")}
@@ -83,12 +86,11 @@ const AddressForm = ({
           gridColumn: "span 2",
         }}
       />
-
       <TextField
         fullWidth
         type="text"
         label="Street Address 2 (optional)"
-        onBlur={handleBur}
+        onBlur={handleBlur}
         onChange={handleChange}
         value={values.street2}
         name={formattedName("street2")}
@@ -103,7 +105,7 @@ const AddressForm = ({
         fullWidth
         type="text"
         label="City"
-        onBlur={handleBur}
+        onBlur={handleBlur}
         onChange={handleChange}
         value={values.city}
         name={formattedName("city")}
@@ -118,7 +120,7 @@ const AddressForm = ({
         fullWidth
         type="text"
         label="State"
-        onBlur={handleBur}
+        onBlur={handleBlur}
         onChange={handleChange}
         value={values.state}
         name={formattedName("state")}
@@ -133,7 +135,7 @@ const AddressForm = ({
         fullWidth
         type="text"
         label="Zip Code"
-        onBlur={handleBur}
+        onBlur={handleBlur}
         onChange={handleChange}
         value={values.zipCode}
         name={formattedName("zipCode")}

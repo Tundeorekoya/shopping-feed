@@ -102,37 +102,37 @@ const Checkout = () => {
         <Step>
           <StepLabel>Payment</StepLabel>
         </Step>
-        <Box>
-          <Formik
-            onSubmit={handleFormSubmit}
-            initialValues={initialValues}
-            validationSchema={checkOutSchema[activeStep]}
-          >
-            {({
-              values,
-              errors,
-              touched,
-              handleBlur,
-              handleChange,
-              handleSubmit,
-              setFieldValue,
-            }) => (
-              <form onSubmit={handleSubmit}>
-                {isFirstStep && (
-                  <Shipping
-                    value={values}
-                    errors={errors}
-                    touched={touched}
-                    handleBur={handleBlur}
-                    handleChange={handleChange}
-                    setFieldValue={setFieldValue}
-                  />
-                )}
-              </form>
-            )}
-          </Formik>
-        </Box>
       </Stepper>
+      <Box>
+        <Formik
+          onSubmit={handleFormSubmit}
+          initialValues={initialValues}
+          validationSchema={checkOutSchema[activeStep]}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleBlur,
+            handleChange,
+            handleSubmit,
+            setFieldValue,
+          }) => (
+            <form onSubmit={handleSubmit}>
+              {isFirstStep && (
+                <Shipping
+                  values={values}
+                  errors={errors}
+                  touched={touched}
+                  handleBur={handleBlur}
+                  handleChange={handleChange}
+                  setFieldValue={setFieldValue}
+                />
+              )}
+            </form>
+          )}
+        </Formik>
+      </Box>
     </Box>
   );
 };
