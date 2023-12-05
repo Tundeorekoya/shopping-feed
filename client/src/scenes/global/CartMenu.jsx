@@ -26,9 +26,9 @@ const CartMenu = () => {
   const cart = useSelector((state) => state.cart.cart);
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
 
-  const totalPrice = cart.reduce((total, item) => {
-    return  total + item.count * item.attributes.price;
-  }, 0);
+   const totalPrice = cart.reduce((total, item) => {
+     return total + item.count * item.attributes.price;
+   }, 0);
 
   return (
     <Box
@@ -122,18 +122,14 @@ const CartMenu = () => {
           {/* ACTIONS */}
           <Box m="20px 0">
             <FlexBox m="20px 0">
-              <Typography
-                fontWeight="bold"
-              >
-                SUBTOTAL
-              </Typography>
+              <Typography fontWeight="bold">SUBTOTAL</Typography>
               <Typography fontWeight="bold">${totalPrice}</Typography>
             </FlexBox>
             <Button
               sx={{
                 backgroundColor: shades.primary[400],
                 color: "white",
-                "&:hover": { color: "black"} ,
+                "&:hover": { color: "black" },
                 borderRadius: 0,
                 minWidth: "100%",
                 padding: "20px 40px",
